@@ -1,0 +1,28 @@
+package test1;
+
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args){
+		int a, b, c,copy,count = 0, sum= 0;
+		Scanner sc = new Scanner(System.in);
+		
+		a = sc.nextInt(); //원래의 수;
+		copy = a; 
+		
+		while(true) {
+			count++;
+			b = a/10; //두 자리 수의 왼쪽 자리
+			c = a%10; //두 자리 수의 오른쪽 자리
+			sum = b+c;
+			
+			a = (c*10) + (sum%2);
+			
+			if(copy == a) { 
+				System.out.println(count);
+				break;
+				}
+			}
+	}
+}

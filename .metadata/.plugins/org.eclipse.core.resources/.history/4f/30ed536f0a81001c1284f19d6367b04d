@@ -1,0 +1,29 @@
+package test1;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt(); //원래의 수;
+
+		int copy = a; //원래의 수를 temp에 저장
+		int count = 0; //사이클
+		
+	while(true) {
+			int a1 = a/10; //두 자리 수의 왼쪽 자리
+			int a2 = a%10; //두 자리 수의 오른쪽 자리
+			int sum = a1+a2;
+			
+			int lastSum = a2+(sum%10);
+			count++;
+			
+		if(copy == lastSum) { 
+			break;
+			}
+		}
+	System.out.println(count);
+	}
+}
