@@ -6,26 +6,31 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
-		int count = 0;
-		int[] val = new int[10];
 		
-		for(int i=0; i<val.length;i++) {
-			val[i] = (sc.nextInt()%42);
-		}
+		int a = sc.nextInt();
 		
-		for(int i = 0; i<val.length; i++) {
-			int cnt = 0;
-			for(int j = i+1; j<val.length; j++) {
-				if(val[i] == val[j]) {
-					cnt++;
-				}
-
-		}
-			if(cnt == 0) { 
-				count++;
+		int[] arr;
+		
+		for(int i = 0; i <a; i++) {
+			int N = sc.nextInt();
+			arr = new int[N];
+			double average; //평균
+			double b = 0; //평균을 넘은 학생들의 수
+			double sum = 0; //성적 합
+			
+			for(int j=0; j<N; j++) {
+				arr[j] = sc.nextInt();
+				sum += arr[j];
 			}
+			average = sum/N;
+			for(int k = 0; k<N; k++) {
+				if(average<arr[k]) {
+					b++;
+				}
+			}
+			double result = b/N;
+			System.out.println(String.format("%.3f",result*100)+"%");
 		}
-		System.out.println(count);
+		sc.close();
 	}
 }
