@@ -7,30 +7,43 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int a = sc.nextInt();
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		int C = sc.nextInt();
 		
-		int[] arr;
+		int money;
+		int max= 0;
 		
-		for(int i = 0; i <a; i++) {
-			int N = sc.nextInt();
-			arr = new int[N];
-			double average; //평균
-			double b = 0; //평균을 넘은 학생들의 수
-			double sum = 0; //성적 합
-			
-			for(int j=0; j<N; j++) {
-				arr[j] = sc.nextInt();
-				sum += arr[j];
-			}
-			average = sum/N;
-			for(int k = 0; k<N; k++) {
-				if(average<arr[k]) {
-					b++;
+		if(A==B && B==C && C ==A) {
+			money = (10000+(A*1000));
+			System.out.println(money);
+		}
+		else if(A == B) {
+			money = (1000 + (A*100));
+			System.out.println(money);
+		}
+		else if(B == C) {
+			money = (1000 + (B*100));
+			System.out.println(money);
+		}
+		else if(A == C) {
+			money = (1000 + (A*100));
+			System.out.println(money);
+		}
+		
+		else if(A!=B && B!=C && C!=B) {
+			int[] a = new int[3];
+			a[0] = A;
+			a[1] = B;
+			a[2] = C;
+			for(int i=0;i<a.length;i++) {
+				if(max < a[i]) {
+					max = a[i];
 				}
 			}
-			double result = b/N;
-			System.out.println(String.format("%.3f",result*100)+"%");
+			
+			money= max*100;
+			System.out.println(money);
 		}
-		sc.close();
 	}
 }
