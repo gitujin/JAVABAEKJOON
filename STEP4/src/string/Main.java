@@ -7,21 +7,30 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int A = sc.nextInt();
+		int[] arr = new int[26]; // ºóµµ ¼ö ¼¿ ¹è¿­
+		String s = sc.next();
 		
-		for(int i = 0; i<A; i++) {
-			
-			int R = sc.nextInt();
-			String S = sc.next();
-			
-			for(int j = 0; j<S.length(); j++) {
-				for(int k = 0; k<R; k++) {
-					System.out.print(S.charAt(j));
-				}
+		for(int i = 0; i<s.length(); i++) {
+			if(s.charAt(i)>='A' && s.charAt(i)<='Z') {
+				arr[s.charAt(i)-'A']++;
 			}
-			
-			System.out.println();
+			else {
+				arr[s.charAt(i)-'a']++;
+			}
 		}
+		int max = -1;
+		char ch = '?';
+		
+		for(int j = 0; j<26; j++) {
+			if(max<arr[j]) {
+				max = arr[j];
+				ch = (char) (j + 65);
+			}
+			else if(max == arr[j]) {
+				ch = '?';
+			}
+		}
+		System.out.println(ch);
 	}
 }
                                                                                                                                                                                                                                                                                                                                                                                                                              
