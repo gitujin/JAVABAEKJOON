@@ -1,36 +1,18 @@
 package string;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int[] arr = new int[26]; // 빈도 수 셀 배열
-		String s = sc.next();
+		String s = sc.nextLine();
 		
-		for(int i = 0; i<s.length(); i++) {
-			if(s.charAt(i)>='A' && s.charAt(i)<='Z') {
-				arr[s.charAt(i)-'A']++;
-			}
-			else {
-				arr[s.charAt(i)-'a']++;
-			}
-		}
-		int max = -1;
-		char ch = '?';
+		StringTokenizer st = new StringTokenizer(s," "); // s = 문자열 , " " = 구분자
 		
-		for(int j = 0; j<26; j++) {
-			if(max<arr[j]) {
-				max = arr[j];
-				ch = (char) (j + 65);
-			}
-			else if(max == arr[j]) {
-				ch = '?';
-			}
-		}
-		System.out.println(ch);
+		System.out.println(st.countTokens());
 	}
 }
                                                                                                                                                                                                                                                                                                                                                                                                                              
