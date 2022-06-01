@@ -8,11 +8,14 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		String s = sc.nextLine();
+		int A = sc.nextInt();
+		int B = sc.nextInt();
 		
-		StringTokenizer st = new StringTokenizer(s," "); // s = 문자열 , " " = 구분자
+		sc.close();
 		
-		System.out.println(st.countTokens());
+		A = Integer.parseInt(new StringBuilder().append(A).reverse().toString());
+		B = Integer.parseInt(new StringBuilder().append(B).reverse().toString());
+		
+		System.out.println(A>B?A:B);
 	}
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                             
